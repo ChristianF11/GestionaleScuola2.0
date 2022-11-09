@@ -1,0 +1,15 @@
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).csproj.AssemblyReference.cache
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).csproj.SuggestedBindingRedirects.cache
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_1__Form_Application_.FrmAddMenu.resources
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.FrmEntryPoint.resources
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_1__Form_Application_.FrmList.resources
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_1__Form_Application_.FrmLogin.resources
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_1__Form_Application_.FrmPersonalArea.resources
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.Properties.Resources.resources
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).csproj.GenerateResource.cache
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).csproj.CoreCompileInputs.cache
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\bin\Debug\Lab 2 (Database).exe.config
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\bin\Debug\Lab 2 (Database).exe
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\bin\Debug\Lab 2 (Database).pdb
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).exe
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).pdb

@@ -113,5 +113,10 @@ namespace Lab_1__Form_Application_
             //Disabilita la possibilità di scrivere all'interno della CombBox
            cmbRole.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void lblCourse_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

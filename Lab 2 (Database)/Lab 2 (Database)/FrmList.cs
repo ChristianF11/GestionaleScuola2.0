@@ -23,29 +23,7 @@ namespace Lab_1__Form_Application_
 
         private void frmList_Load(object sender, EventArgs e)
         {
-            int code = 0;
 
-            listViewSchool.Items.Clear();
-
-            //Creazione della tabella
-            foreach(SchoolMember member in schoolList)
-            {
-                
-                member.Code = code;
-
-                if (member is Student)
-                    member.Role = "Studente";
-
-                else if (member is Teacher)
-                    member.Role = "Docente";
-
-                //Creazione della riga e aggiunta nella ListView
-                string[] row = { member.Code.ToString(), member.FirstName, member.SecondName,member.Age.ToString(), member.EMail, member.Role };
-                membersView = new ListViewItem(row);
-                listViewSchool.Items.Add(membersView);
-
-                code++;
-            }
         }
 
         private void btnListBack_Click(object sender, EventArgs e)
@@ -59,38 +37,12 @@ namespace Lab_1__Form_Application_
 
         }
 
-        private void listSchool_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
 
         /*Metodo che restituisce alcuni DETTAGLI del membro selezionato sotto forma
         di "MessageBox*/
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            //Verifico che la lista contenga almeno un elemento e che si stato selezionato qualcosa
-            if(schoolList.Count > 0)
-            {
-                try
-                {
-                    MessageBox.Show(GetInfo(listViewSchool.SelectedIndices[0]), "Maggiori dettagli",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
 
-                catch(Exception)
-                {
-                    MessageBox.Show("Nessun elemento selezionato", "Errore",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-
-            else
-            {
-                MessageBox.Show("La lista è vuota", "Attenzione",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
         //ELIMINAZIONE di TUTTA la lista
@@ -105,27 +57,6 @@ namespace Lab_1__Form_Application_
             schoolList.Add(member);
         }
 
-
-        /*Metodo che restituisce le informazioni presenti in tabella del membro selezionato
-        sotto forma di "string"*/
-        private string GetInfo(int index)
-        {
-            SchoolMember member = schoolList[index];
-            string details = "";
-            string censoredPassword = "";
-
-            //Stampa password censurata
-            for (int i = 0; i < member.Password.Length; i++)
-            {
-                censoredPassword += "*";
-            }
-
-            details += "Nome: " + member.FirstName + "\nCognome: " + member.SecondName;
-            details += "\nEtà: " + member.Age + "\nEmail: " + member.EMail + "\nPassword: " + censoredPassword; 
-
-            return details;
-            
-        }
 
     }
 }

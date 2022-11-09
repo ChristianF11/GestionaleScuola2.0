@@ -86,5 +86,10 @@ namespace Lab_1__Form_Application_
         {
             memberList.Clear();
         }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

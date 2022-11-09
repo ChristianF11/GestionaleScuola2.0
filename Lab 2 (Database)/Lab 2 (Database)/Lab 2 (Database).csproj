@@ -85,6 +85,18 @@
     <EmbeddedResource Include="FrmAddMenu.resx">
       <DependentUpon>FrmAddMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEntryPoint.resx">
+      <DependentUpon>FrmEntryPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmList.resx">
+      <DependentUpon>FrmList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPersonalArea.resx">
+      <DependentUpon>FrmPersonalArea.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

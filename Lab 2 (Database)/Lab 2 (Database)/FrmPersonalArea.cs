@@ -89,5 +89,10 @@ namespace Lab_1__Form_Application_
             else
                 authorizedTeacher = (Teacher) member;
         }
+
+        private void lblSalary_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
