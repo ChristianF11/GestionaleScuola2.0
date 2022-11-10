@@ -1,4 +1,4 @@
-using Lab_1__Form_Application_;
+using Lab_2__Database_;
 using System;
 using System.Windows.Forms;
 
@@ -6,7 +6,6 @@ namespace Lab_2__Database_
 {
     public partial class FrmEntryPoint : Form
     {
-        private bool operationDone = false;
         public FrmEntryPoint()
         {
             InitializeComponent();
@@ -25,8 +24,8 @@ namespace Lab_2__Database_
 
         private void btnViewList_Click(object sender, EventArgs e)
         {
-            FrmList listForm = new FrmList();
-            listForm.ShowDialog();
+            FrmStudentsList studentListForm = new FrmStudentsList();
+            studentListForm.ShowDialog();
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
@@ -35,6 +34,11 @@ namespace Lab_2__Database_
             addForm.ShowDialog();
         }
 
+        private void btnToTeacherList_Click(object sender, EventArgs e)
+        {
+            FrmTeachersList teacherListForm= new FrmTeachersList();
+            teacherListForm.ShowDialog();
+        }
     }
 
 }

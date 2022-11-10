@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab_1__Form_Application_
+namespace Lab_2__Database_
 {
     public partial class FrmPersonalArea : Form
     {

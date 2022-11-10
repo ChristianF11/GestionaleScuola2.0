@@ -33,8 +33,9 @@ namespace Lab_2__Database_
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntryPoint));
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.btnViewList = new System.Windows.Forms.Button();
+            this.btnToStudentList = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnToTeacherList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -43,10 +44,10 @@ namespace Lab_2__Database_
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Impact", 36F);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitle.Location = new System.Drawing.Point(224, 14);
+            this.lblTitle.Location = new System.Drawing.Point(279, 9);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(209, 60);
+            this.lblTitle.Size = new System.Drawing.Size(262, 75);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "C SCHOOL";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -54,55 +55,66 @@ namespace Lab_2__Database_
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnAddStudent.Location = new System.Drawing.Point(176, 97);
+            this.btnAddStudent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddStudent.Location = new System.Drawing.Point(252, 104);
             this.btnAddStudent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(314, 86);
+            this.btnAddStudent.Size = new System.Drawing.Size(314, 88);
             this.btnAddStudent.TabIndex = 1;
             this.btnAddStudent.Text = "AGGIUNGI NUOVO MEMBRO";
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // btnViewList
+            // btnToStudentList
             // 
-            this.btnViewList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnViewList.Location = new System.Drawing.Point(176, 200);
-            this.btnViewList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnViewList.Name = "btnViewList";
-            this.btnViewList.Size = new System.Drawing.Size(314, 86);
-            this.btnViewList.TabIndex = 2;
-            this.btnViewList.Text = "VISUALIZZA LISTA";
-            this.btnViewList.UseVisualStyleBackColor = true;
-            this.btnViewList.Click += new System.EventHandler(this.btnViewList_Click);
+            this.btnToStudentList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnToStudentList.Location = new System.Drawing.Point(252, 214);
+            this.btnToStudentList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnToStudentList.Name = "btnToStudentList";
+            this.btnToStudentList.Size = new System.Drawing.Size(314, 88);
+            this.btnToStudentList.TabIndex = 2;
+            this.btnToStudentList.Text = "VISUALIZZA LISTA STUDENTI";
+            this.btnToStudentList.UseVisualStyleBackColor = true;
+            this.btnToStudentList.Click += new System.EventHandler(this.btnViewList_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnLogin.Location = new System.Drawing.Point(176, 305);
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogin.Location = new System.Drawing.Point(252, 426);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(314, 86);
+            this.btnLogin.Size = new System.Drawing.Size(314, 88);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // btnToTeacherList
+            // 
+            this.btnToTeacherList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnToTeacherList.Location = new System.Drawing.Point(252, 319);
+            this.btnToTeacherList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnToTeacherList.Name = "btnToTeacherList";
+            this.btnToTeacherList.Size = new System.Drawing.Size(314, 88);
+            this.btnToTeacherList.TabIndex = 4;
+            this.btnToTeacherList.Text = "VISUALIZZA LISTA DOCENTI";
+            this.btnToTeacherList.UseVisualStyleBackColor = true;
+            this.btnToTeacherList.Click += new System.EventHandler(this.btnToTeacherList_Click);
+            // 
             // FrmEntryPoint
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(638, 449);
+            this.ClientSize = new System.Drawing.Size(789, 562);
+            this.Controls.Add(this.btnToTeacherList);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnViewList);
+            this.Controls.Add(this.btnToStudentList);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Britannic Bold", 12F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximumSize = new System.Drawing.Size(654, 488);
-            this.MinimumSize = new System.Drawing.Size(654, 488);
             this.Name = "FrmEntryPoint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestionale C School";
@@ -115,7 +127,8 @@ namespace Lab_2__Database_
 
         private Label lblTitle;
         private Button btnAddStudent;
-        private Button btnViewList;
+        private Button btnToStudentList;
         private Button btnLogin;
+        private Button btnToTeacherList;
     }
 }

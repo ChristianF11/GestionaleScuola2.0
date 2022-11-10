@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbData.cs" />
     <Compile Include="FrmAddMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,12 +59,6 @@
     </Compile>
     <Compile Include="FrmEntryPoint.Designer.cs">
       <DependentUpon>FrmEntryPoint.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmList.Designer.cs">
-      <DependentUpon>FrmList.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -76,9 +72,27 @@
     <Compile Include="FrmPersonalArea.Designer.cs">
       <DependentUpon>FrmPersonalArea.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmStudentsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentsList.Designer.cs">
+      <DependentUpon>FrmStudentsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTeachersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTeachersList.Designer.cs">
+      <DependentUpon>FrmTeachersList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ICheck.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="schoolDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>schoolDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SchoolMember.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
@@ -88,14 +102,17 @@
     <EmbeddedResource Include="frmEntryPoint.resx">
       <DependentUpon>FrmEntryPoint.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmList.resx">
-      <DependentUpon>FrmList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPersonalArea.resx">
       <DependentUpon>FrmPersonalArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentsList.resx">
+      <DependentUpon>FrmStudentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTeachersList.resx">
+      <DependentUpon>FrmTeachersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,6 +132,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="schoolDBDataSet.xsc">
+      <DependentUpon>schoolDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="schoolDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>schoolDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="schoolDBDataSet.xss">
+      <DependentUpon>schoolDBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

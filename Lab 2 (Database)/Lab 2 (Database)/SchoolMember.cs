@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 
-namespace Lab_1__Form_Application_
+namespace Lab_2__Database_
 {
     /// <summary>
     /// Classe astratta e "parent" delle classi "Student" e "Teacher"

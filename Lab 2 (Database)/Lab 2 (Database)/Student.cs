@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_1__Form_Application_
+namespace Lab_2__Database_
 {
-    internal class Student : SchoolMember
+    public class Student : SchoolMember
     {
         private double gpa;
         private string course;
