@@ -45,7 +45,7 @@ namespace Lab_2__Database_
         {
             DataTable dt;
             dataOperation.Open();
-            dt = dataOperation.ReadDataTable("select * from Teacher");
+            dt = dataOperation.ReadDataTable("select Id, FirstName,SecondName,Age,Email from Teacher");
             dataGridTeacher.DataSource = dt;
             dataOperation.Close();
         }
@@ -57,7 +57,7 @@ namespace Lab_2__Database_
             dataOperation.Open();
 
             //Verifico che sia presente almeno un elemento
-            if (dataOperation.CountElements("select Id from Student") == null)
+            if (dataOperation.CountElements("select Id from Teacher") == null)
             {
                 message.CustomBoxError("Lista vuota", "Visualizza dettagli");
                 dataOperation.Close();
@@ -75,29 +75,50 @@ namespace Lab_2__Database_
 
         private void DeleteSelected()
         {
-            //Eliminazione confermata (tramite "MessageBox") dell'elemento selezionato
-            selectedId = dataGridTeacher.CurrentRow.Cells[0].Value.ToString();
-            if(message.ConfirmDelete())
+            dataOperation.Open();
+
+            if (dataOperation.CountElements("select Id from Teacher") == null)
             {
-                dataOperation.Open();
-                dataOperation.DeleteMember($"delete from Teacher where Id = {selectedId}");
+                message.CustomBoxError("Lista vuota", "Visualizza dettagli");
                 dataOperation.Close();
-                message.CustomBoxInformation("Operazione andata a buon fine!", "Eliminazione");
-                LoadList();
+            }
+
+            else
+            {
+                //Eliminazione confermata (tramite "MessageBox") dell'elemento selezionato
+                selectedId = dataGridTeacher.CurrentRow.Cells[0].Value.ToString();
+                if (message.ConfirmDelete())
+                {
+                    dataOperation.Open();
+                    dataOperation.DeleteMember($"delete from Teacher where Id = {selectedId}");
+                    dataOperation.Close();
+                    LoadList();
+                }
             }
 
         }
 
         private void DeleteAll()
         {
-            selectedId = dataGridTeacher.CurrentRow.Cells[0].Value.ToString();
-            if(message.ConfirmDeleteAll())
+            dataOperation.Open();
+
+            if (dataOperation.CountElements("select Id from Teacher") == null)
             {
-                dataOperation.Open();
-                dataOperation.DeleteAllList("delete from Teacher");
+                message.CustomBoxError("Lista vuota", "Visualizza dettagli");
                 dataOperation.Close();
-                message.CustomBoxInformation("Operazione andata a buon fine!", "Eliminazione");
-                LoadList();
+            }
+
+            else
+            {
+                selectedId = dataGridTeacher.CurrentRow.Cells[0].Value.ToString();
+                if (message.ConfirmDeleteAll())
+                {
+                    dataOperation.Open();
+                    dataOperation.DeleteAllList("delete from Teacher");
+                    dataOperation.Close();
+                    message.CustomBoxInformation("Operazione andata a buon fine!", "Eliminazione");
+                    LoadList();
+                }
             }
         }
 

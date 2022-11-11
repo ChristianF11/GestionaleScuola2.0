@@ -15,6 +15,7 @@ namespace Lab_2__Database_
         DbData dataOperation = new DbData();
         OperationMessage message = new OperationMessage();
         private string selectedId;
+
         public FrmStudentsList()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace Lab_2__Database_
         {
             DataTable dt;
             dataOperation.Open();
-            dt = dataOperation.ReadDataTable("select * from Student");
+            dt = dataOperation.ReadDataTable("select Id, FirstName,SecondName,Age,Email from Student");
             dataGridStudent.DataSource = dt;
             dataOperation.Close();
         }
@@ -72,27 +73,49 @@ namespace Lab_2__Database_
 
         private void DeleteSelected()
         {
-            //Eliminazione confermata (tramite "MessageBox") dell'elemento selezionato
-            selectedId = dataGridStudent.CurrentRow.Cells[0].Value.ToString();
-            if (message.ConfirmDelete())
+            dataOperation.Open();
+
+            if (dataOperation.CountElements("select Id from Student") == null)
             {
-                dataOperation.Open();
-                dataOperation.DeleteMember($"delete from Student where Id = {selectedId}");
+                message.CustomBoxError("Lista vuota", "Visualizza dettagli");
                 dataOperation.Close();
-                LoadList();
+            }
+
+            else
+            {
+                //Eliminazione confermata (tramite "MessageBox") dell'elemento selezionato
+                selectedId = dataGridStudent.CurrentRow.Cells[0].Value.ToString();
+                if (message.ConfirmDelete())
+                {
+                    dataOperation.Open();
+                    dataOperation.DeleteMember($"delete from Student where Id = {selectedId}");
+                    dataOperation.Close();
+                    LoadList();
+                }
             }
         }
 
         private void DeleteAll()
         {
-            selectedId = dataGridStudent.CurrentRow.Cells[0].Value.ToString();
-            if (message.ConfirmDeleteAll())
+            dataOperation.Open();
+
+            if (dataOperation.CountElements("select Id from Student") == null)
             {
-                dataOperation.Open();
-                dataOperation.DeleteAllList("delete from Student");
+                message.CustomBoxError("Lista vuota", "Visualizza dettagli");
                 dataOperation.Close();
-                message.CustomBoxInformation("Operazione andata a buon fine!", "Eliminazione");
-                LoadList();
+            }
+
+            else
+            {
+                selectedId = dataGridStudent.CurrentRow.Cells[0].Value.ToString();
+                if (message.ConfirmDeleteAll())
+                {
+                    dataOperation.Open();
+                    dataOperation.DeleteAllList("delete from Student");
+                    dataOperation.Close();
+                    message.CustomBoxInformation("Operazione andata a buon fine!", "Eliminazione");
+                    LoadList();
+                }
             }
         }
 
