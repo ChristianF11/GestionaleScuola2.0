@@ -13,6 +13,9 @@ namespace Lab_2__Database_
     public partial class FrmTeachersList : Form
     {
         DbData dataOperation = new DbData();
+        OperationMessage message = new OperationMessage();
+
+        private string selectedId;
         public FrmTeachersList()
         {
             InitializeComponent();
@@ -25,29 +28,82 @@ namespace Lab_2__Database_
 
         private void FrmTeachersList_Load(object sender, EventArgs e)
         {
-            DataTable dt;
-            dataOperation.Open();
-            dt = dataOperation.ReadDataTable("select * from Teacher");
-            dataGridView1.DataSource = dt;
-            dataOperation.Close();
-           
+            LoadList();
         }
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            //dataOperation.ShowDetails(listTeachers, listTeachers.SelectedIndices[0]);
-            string s = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            MessageBox.Show("current row:" + s);
+            ToPersonalPage();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            DeleteSelected();
+        }
+
+        private void LoadList()
+        {
+            DataTable dt;
+            dataOperation.Open();
+            dt = dataOperation.ReadDataTable("select * from Teacher");
+            dataGridTeacher.DataSource = dt;
+            dataOperation.Close();
+        }
+
+        private void ToPersonalPage()
+        {
+            FrmPersonalPage personalPage = new FrmPersonalPage();
+
+            dataOperation.Open();
+
+            //Verifico che sia presente almeno un elemento
+            if (dataOperation.CountElements("select Id from Student") == null)
+            {
+                message.CustomBoxError("Lista vuota", "Visualizza dettagli");
+                dataOperation.Close();
+            }
+
+            else
+            {
+                //Comando che ottiene e salva l'ID selezionato
+                selectedId = dataGridTeacher.CurrentRow.Cells[0].Value.ToString();
+                personalPage.GetMemberData(dataOperation.ReadDataTable($"select * from Teacher where Id = {selectedId}"));
+                dataOperation.Close();
+                personalPage.ShowDialog();
+            }
+        }
+
+        private void DeleteSelected()
+        {
+            //Eliminazione confermata (tramite "MessageBox") dell'elemento selezionato
+            selectedId = dataGridTeacher.CurrentRow.Cells[0].Value.ToString();
+            if(message.ConfirmDelete())
+            {
+                dataOperation.Open();
+                dataOperation.DeleteMember($"delete from Teacher where Id = {selectedId}");
+                dataOperation.Close();
+                message.CustomBoxInformation("Operazione andata a buon fine!", "Eliminazione");
+                LoadList();
+            }
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DeleteAll()
         {
+            selectedId = dataGridTeacher.CurrentRow.Cells[0].Value.ToString();
+            if(message.ConfirmDeleteAll())
+            {
+                dataOperation.Open();
+                dataOperation.DeleteAllList("delete from Teacher");
+                dataOperation.Close();
+                message.CustomBoxInformation("Operazione andata a buon fine!", "Eliminazione");
+                LoadList();
+            }
+        }
 
+        private void btnDeletAll_Click(object sender, EventArgs e)
+        {
+            DeleteAll();
         }
     }
 }

@@ -34,7 +34,6 @@ namespace Lab_2__Database_
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnToStudentList = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.btnToTeacherList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,7 +55,7 @@ namespace Lab_2__Database_
             // btnAddStudent
             // 
             this.btnAddStudent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddStudent.Location = new System.Drawing.Point(252, 104);
+            this.btnAddStudent.Location = new System.Drawing.Point(253, 126);
             this.btnAddStudent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(314, 88);
@@ -68,7 +67,7 @@ namespace Lab_2__Database_
             // btnToStudentList
             // 
             this.btnToStudentList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToStudentList.Location = new System.Drawing.Point(252, 214);
+            this.btnToStudentList.Location = new System.Drawing.Point(253, 254);
             this.btnToStudentList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnToStudentList.Name = "btnToStudentList";
             this.btnToStudentList.Size = new System.Drawing.Size(314, 88);
@@ -77,22 +76,10 @@ namespace Lab_2__Database_
             this.btnToStudentList.UseVisualStyleBackColor = true;
             this.btnToStudentList.Click += new System.EventHandler(this.btnViewList_Click);
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLogin.Location = new System.Drawing.Point(252, 426);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(314, 88);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "LOGIN";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
             // btnToTeacherList
             // 
             this.btnToTeacherList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToTeacherList.Location = new System.Drawing.Point(252, 319);
+            this.btnToTeacherList.Location = new System.Drawing.Point(253, 388);
             this.btnToTeacherList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnToTeacherList.Name = "btnToTeacherList";
             this.btnToTeacherList.Size = new System.Drawing.Size(314, 88);
@@ -108,7 +95,6 @@ namespace Lab_2__Database_
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(789, 562);
             this.Controls.Add(this.btnToTeacherList);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnToStudentList);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.lblTitle);
@@ -128,7 +114,6 @@ namespace Lab_2__Database_
         private Label lblTitle;
         private Button btnAddStudent;
         private Button btnToStudentList;
-        private Button btnLogin;
         private Button btnToTeacherList;
     }
 }

@@ -16,12 +16,6 @@ namespace Lab_2__Database_
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            FrmLogin loginForm = new FrmLogin();
-            loginForm.ShowDialog();
-        }
-
         private void btnViewList_Click(object sender, EventArgs e)
         {
             FrmStudentsList studentListForm = new FrmStudentsList();

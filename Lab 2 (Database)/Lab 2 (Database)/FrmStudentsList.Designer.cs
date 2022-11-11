@@ -34,11 +34,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDetails = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.listStudents = new System.Windows.Forms.ListView();
-            this.columnFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnSecondName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataGridStudent = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -61,6 +58,7 @@
             this.btnDeletAll.TabIndex = 1;
             this.btnDeletAll.Text = "Elimina tutto";
             this.btnDeletAll.UseVisualStyleBackColor = true;
+            this.btnDeletAll.Click += new System.EventHandler(this.btnDeletAll_Click);
             // 
             // btnDelete
             // 
@@ -71,6 +69,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Elimina";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnDetails
             // 
@@ -81,6 +80,7 @@
             this.btnDetails.TabIndex = 3;
             this.btnDetails.Text = "Dettagli";
             this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // lblTitle
             // 
@@ -89,52 +89,26 @@
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblTitle.Location = new System.Drawing.Point(496, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(321, 54);
+            this.lblTitle.Size = new System.Drawing.Size(316, 53);
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "ELENCO STUDENTI";
             // 
-            // listStudents
+            // dataGridStudent
             // 
-            this.listStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listStudents.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.listStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnFirstName,
-            this.columnSecondName,
-            this.columnAge,
-            this.columnEmail});
-            this.listStudents.Font = new System.Drawing.Font("Dubai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listStudents.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.listStudents.FullRowSelect = true;
-            this.listStudents.GridLines = true;
-            this.listStudents.HideSelection = false;
-            this.listStudents.Location = new System.Drawing.Point(22, 66);
-            this.listStudents.Name = "listStudents";
-            this.listStudents.Size = new System.Drawing.Size(1294, 426);
-            this.listStudents.TabIndex = 5;
-            this.listStudents.UseCompatibleStateImageBehavior = false;
-            this.listStudents.View = System.Windows.Forms.View.Details;
-            // 
-            // columnFirstName
-            // 
-            this.columnFirstName.Text = "Nome";
-            this.columnFirstName.Width = 253;
-            // 
-            // columnSecondName
-            // 
-            this.columnSecondName.Text = "Cognome";
-            this.columnSecondName.Width = 182;
-            // 
-            // columnAge
-            // 
-            this.columnAge.Text = "Età";
-            this.columnAge.Width = 237;
-            // 
-            // columnEmail
-            // 
-            this.columnEmail.Text = "Email";
-            this.columnEmail.Width = 520;
+            this.dataGridStudent.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dataGridStudent.ColumnHeadersHeight = 50;
+            this.dataGridStudent.GridColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dataGridStudent.Location = new System.Drawing.Point(31, 95);
+            this.dataGridStudent.MaximumSize = new System.Drawing.Size(1266, 429);
+            this.dataGridStudent.MinimumSize = new System.Drawing.Size(1266, 429);
+            this.dataGridStudent.Name = "dataGridStudent";
+            this.dataGridStudent.ReadOnly = true;
+            this.dataGridStudent.RowHeadersWidth = 148;
+            this.dataGridStudent.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridStudent.RowTemplate.Height = 24;
+            this.dataGridStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridStudent.Size = new System.Drawing.Size(1266, 429);
+            this.dataGridStudent.TabIndex = 12;
             // 
             // FrmStudentsList
             // 
@@ -142,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1328, 618);
-            this.Controls.Add(this.listStudents);
+            this.Controls.Add(this.dataGridStudent);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.btnDelete);
@@ -155,6 +129,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestionale C School";
             this.Load += new System.EventHandler(this.FrmStudentsList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,10 +142,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.ListView listStudents;
-        private System.Windows.Forms.ColumnHeader columnFirstName;
-        private System.Windows.Forms.ColumnHeader columnSecondName;
-        private System.Windows.Forms.ColumnHeader columnAge;
-        private System.Windows.Forms.ColumnHeader columnEmail;
+        private System.Windows.Forms.DataGridView dataGridStudent;
     }
 }

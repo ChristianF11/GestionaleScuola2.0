@@ -34,8 +34,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDeletAll = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridTeacher = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTeacher)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -45,7 +45,7 @@
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblTitle.Location = new System.Drawing.Point(496, 11);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(302, 54);
+            this.lblTitle.Size = new System.Drawing.Size(297, 53);
             this.lblTitle.TabIndex = 10;
             this.lblTitle.Text = "ELENCO DOCENTI";
             // 
@@ -80,6 +80,7 @@
             this.btnDeletAll.TabIndex = 7;
             this.btnDeletAll.Text = "Elimina tutto";
             this.btnDeletAll.UseVisualStyleBackColor = true;
+            this.btnDeletAll.Click += new System.EventHandler(this.btnDeletAll_Click);
             // 
             // btnBack
             // 
@@ -92,16 +93,22 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // dataGridView1
+            // dataGridTeacher
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 77);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1266, 429);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridTeacher.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dataGridTeacher.ColumnHeadersHeight = 50;
+            this.dataGridTeacher.GridColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dataGridTeacher.Location = new System.Drawing.Point(26, 77);
+            this.dataGridTeacher.MaximumSize = new System.Drawing.Size(1266, 429);
+            this.dataGridTeacher.MinimumSize = new System.Drawing.Size(1266, 429);
+            this.dataGridTeacher.Name = "dataGridTeacher";
+            this.dataGridTeacher.ReadOnly = true;
+            this.dataGridTeacher.RowHeadersWidth = 148;
+            this.dataGridTeacher.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridTeacher.RowTemplate.Height = 24;
+            this.dataGridTeacher.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridTeacher.Size = new System.Drawing.Size(1266, 429);
+            this.dataGridTeacher.TabIndex = 11;
             // 
             // FrmTeachersList
             // 
@@ -109,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1328, 618);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridTeacher);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.btnDelete);
@@ -120,7 +127,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestionale C School";
             this.Load += new System.EventHandler(this.FrmTeachersList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTeacher)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +139,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnDeletAll;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridTeacher;
     }
 }

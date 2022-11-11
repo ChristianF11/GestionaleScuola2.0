@@ -69,40 +69,19 @@ namespace Lab_2__Database_
             }
         }
 
-        public void DeleteMember(ListView list, int index)
+        public void DeleteMember(string query)
         {
-
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+            command.ExecuteScalar();
 
         }
 
-        public void ShowDetails(ListView list, int index)
+        public void DeleteAllList(string query)
         {
-            try
-            {
-                Open();
-                string query = $"select * from {CheckTable(list)} where Id = @Id";
-                SqlCommand command = new SqlCommand(query, sqlConnection);
-
-                command.Parameters.AddWithValue("@Id", list.SelectedIndices);
-
-                command.ExecuteReader();
-            }
-            catch
-            {
-                message.ErrorMessage();
-            }
-            finally
-            {
-                Close();
-            }          
-
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+            command.ExecuteScalar();
         }
-        public void UpdateStudent(int index, Student student)
-        {
-            //Da richiamare in "FrmPersonalArea"
-        }
-
-        public void UpdateTeacher(int index, Teacher teacher)
+        public void UpdateStudent(DataTable selectedMember)
         {
             //Da richiamare in "FrmPersonalArea"
         }
@@ -127,19 +106,6 @@ namespace Lab_2__Database_
             }
         }
 
-        /// <summary>
-        /// A seconda del nome della ListView, restituisce il nome della tabella nel DB corrispondente
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        private string CheckTable(ListView list)
-        {
-            if (list.Name == "listStudents")
-                return "Student";
-  
-            return "Teacher";
-        }
-
         public DataTable ReadDataTable(string query)
         {
             SqlCommand command = new SqlCommand(query, sqlConnection);
@@ -150,6 +116,16 @@ namespace Lab_2__Database_
             dataAdapter.Fill(dt);
 
             return dt;
+        }
+
+        public Object CountElements(string query)
+        {
+            Object elements;
+
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+            elements = command.ExecuteScalar();
+
+            return elements;
         }
     }
 }

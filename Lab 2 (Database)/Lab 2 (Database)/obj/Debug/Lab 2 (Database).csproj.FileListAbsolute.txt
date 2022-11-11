@@ -5,12 +5,11 @@ C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Da
 C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).csproj.SuggestedBindingRedirects.cache
 C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.FrmAddMenu.resources
 C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.FrmEntryPoint.resources
-C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.FrmLogin.resources
-C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.FrmPersonalArea.resources
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.FrmPersonalPage.resources
 C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.FrmStudentsList.resources
+C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.FrmTeachersList.resources
 C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.Properties.Resources.resources
 C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).csproj.GenerateResource.cache
 C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).csproj.CoreCompileInputs.cache
 C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).exe
 C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab 2 (Database).pdb
-C:\Users\Christian\Desktop\GitHub\GestionaleScuola2.0\Lab 2 (Database)\Lab 2 (Database)\obj\Debug\Lab_2__Database_.FrmTeachersList.resources

@@ -37,36 +37,30 @@ namespace Lab_2__Database_
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void ConfirmDelete()
+        public bool ConfirmDelete()
         {
-            MessageBox.Show("Sei sicuro di voler eliminare questo elemento?", "Eliminazione", 
+            DialogResult userChoice;
+
+            userChoice = MessageBox.Show("Sei sicuro di voler eliminare questo elemento?", "Eliminazione", 
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (DialogResult.Yes == userChoice)
+                return true;
+
+            return false;
         }
 
-        public void ShowDetails(SchoolMember member)
+        public bool ConfirmDeleteAll()
         {
-            MessageBox.Show(StringDetails(member), "Dettagli", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        } 
+            DialogResult userChoice;
 
-        private string StringDetails(SchoolMember member) 
-        {
-            string details = "";
+            userChoice = MessageBox.Show("Sei sicuro di voler eliminare TUTTO L'ELENCO?", "Eliminazione",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            details += "Nome: " + member.FirstName + "\nCognome: " + member.SecondName + "\nEtà: " + member.Age.ToString() +
-                "\nEmail: " + member.EMail;
+            if (DialogResult.Yes == userChoice)
+                return true;
 
-            if(member is Student)
-            {
-                Student student = (Student) member;
-                details += "\nRuolo: Studente" + "\nCorso: " + student.Course;
-            }
-
-            else if(member is Teacher)
-            {
-                Teacher teacher = (Teacher)member;
-                details += "\nRuolo: Docente" + "\nMateria: " + teacher.Subject;
-            }
-            return details;
+            return false;
         }
 
     }
