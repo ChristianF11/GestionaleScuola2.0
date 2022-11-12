@@ -41,7 +41,6 @@ namespace Lab_2__Database_
             {
                 
                 string query = $"insert into {tableName} values (@FirstName, @SecondName,@Age, @Email, @Password, @FirstSpecialParam, @SecondSpecialParam)";
-                Open();
 
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
 
@@ -63,10 +62,6 @@ namespace Lab_2__Database_
                 message.ErrorMessage();
             }
 
-            finally
-            {
-                Close();
-            }
         }
 
         public void DeleteMember(string query)
@@ -81,9 +76,14 @@ namespace Lab_2__Database_
             SqlCommand command = new SqlCommand(query, sqlConnection);
             command.ExecuteScalar();
         }
-        public void UpdateStudent(DataTable selectedMember)
+
+        public void UpdateMember(DataGridView selectedMember, string query)
         {
-            //Da richiamare in "FrmPersonalArea"
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+
+            command.Parameters.AddWithValue("@FirstName", selectedMember.CurrentRow.Cells[1].Value);
+
+            command.ExecuteScalar();
         }
 
         private void MemberRoleCheck(SchoolMember member, SqlCommand sqlCommand)

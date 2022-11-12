@@ -40,9 +40,10 @@ namespace Lab_2__Database_
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //dataOperation.Open();
+            dataOperation.Open();
             CheckInputField();
-            //dataOperation.Close();
+            dataOperation.Close();
+            Clear();
         }
 
         private void btnClear_Click(object sender, EventArgs e)

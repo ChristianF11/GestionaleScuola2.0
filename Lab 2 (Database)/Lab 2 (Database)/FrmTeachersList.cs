@@ -52,7 +52,7 @@ namespace Lab_2__Database_
 
         private void ToPersonalPage()
         {
-            FrmPersonalPage personalPage = new FrmPersonalPage();
+            FrmPersonalPage personalPage = new FrmPersonalPage("Teacher");
 
             dataOperation.Open();
 
