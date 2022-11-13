@@ -20,6 +20,7 @@ namespace Lab_2__Database_
             InitializeComponent();
         }
 
+        //Questa property mi permette di capire da quale pagina e lista/tabella è arrivato l'utente ("Student" o "Teacher")
         public string SelectedTable
         {
             get { return selectedTable; }
@@ -46,11 +47,7 @@ namespace Lab_2__Database_
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string selectedId = dataGridPersonal.CurrentRow.Cells[0].Value.ToString();
-            dataOperation.Open();
-            dataOperation.UpdateMember(dataGridPersonal, LongQuery(selectedId, SelectedTable));
-            dataOperation.Close();
-            this.Hide();
+            EditMember();
         }
 
         public void GetMemberData(DataTable dataTable)
@@ -64,14 +61,40 @@ namespace Lab_2__Database_
 
         private string LongQuery(string selectedId, string tableName)
         {
-            /*string query = "update" + tableName + "set FirstName = @FirstName, SecondName = @SecondName, " +
-                "Age = @Age, Email = @Email, Password = @Password, " + "Gpa = @Gpa, Course = @Course where Id = " + selectedId;*/
+            string query = "";
 
-            string query = "update " + tableName + " set FirstName = @FirstName where Id = " + selectedId;
+            if(tableName == "Student")
+                query = "update " + tableName + " set FirstName = @FirstName, SecondName = @SecondName, Age = @Age," +
+                    "Email = @Email, Password = @Password, Gpa = @FirstSpecialParam, Course = @SecondSpecialParam where Id = " + selectedId;
+
+            else if(tableName == "Teacher")
+                query = "update " + tableName + " set FirstName = @FirstName, SecondName = @SecondName, Age = @Age," +
+                    "Email = @Email, Password = @Password, Salary = @FirstSpecialParam, Subject = @SecondSpecialParam where Id = " + selectedId;
+
 
             return query;
         }
 
+        private void EditMember()
+        {
+            string selectedId = dataGridPersonal.CurrentRow.Cells[0].Value.ToString();
+            dataOperation.Open();
+            dataOperation.UpdateMember(dataGridPersonal, LongQuery(selectedId, SelectedTable));
+            dataOperation.Close();
+            this.Hide();
+
+            if (selectedTable == "Student")
+            {
+                FrmStudentsList studentListForm = new FrmStudentsList();
+                studentListForm.ShowDialog();
+            }
+
+            else
+            {
+                FrmTeachersList teacherListForm = new FrmTeachersList();
+                teacherListForm.ShowDialog();
+            }
+        }
         
     }
 }

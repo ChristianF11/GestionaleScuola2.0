@@ -35,6 +35,7 @@ namespace Lab_2__Database_
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ToPersonalPage();
         }
 

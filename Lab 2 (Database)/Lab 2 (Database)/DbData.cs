@@ -52,7 +52,7 @@ namespace Lab_2__Database_
 
                 //Assegnazione dei parametri "speciali" a seconda del ruolo
                 MemberRoleCheck(member, sqlCommand);
-                sqlCommand.ExecuteScalar(); //L'eccezione si verifica arrivati a questo punto
+                sqlCommand.ExecuteScalar();
 
                 message.CustomBoxInformation("Operazione andata a buon fine!", "Aggiunta Docente/Studente");
             }
@@ -82,6 +82,12 @@ namespace Lab_2__Database_
             SqlCommand command = new SqlCommand(query, sqlConnection);
 
             command.Parameters.AddWithValue("@FirstName", selectedMember.CurrentRow.Cells[1].Value);
+            command.Parameters.AddWithValue("@SecondName", selectedMember.CurrentRow.Cells[2].Value);
+            command.Parameters.AddWithValue("@Age", selectedMember.CurrentRow.Cells[3].Value);
+            command.Parameters.AddWithValue("@Email", selectedMember.CurrentRow.Cells[4].Value);
+            command.Parameters.AddWithValue("@Password", selectedMember.CurrentRow.Cells[5].Value);
+            command.Parameters.AddWithValue("@FirstSpecialParam", selectedMember.CurrentRow.Cells[6].Value);
+            command.Parameters.AddWithValue("@SecondSpecialParam", selectedMember.CurrentRow.Cells[7].Value);
 
             command.ExecuteScalar();
         }
