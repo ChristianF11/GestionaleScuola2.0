@@ -55,7 +55,7 @@ namespace Lab_2__Database_
             dataOperation.Open();
 
             //Verifico che sia presente almeno un elemento
-            if (dataOperation.CountElements("select Id from Student") == null)
+            if (dataOperation.CountElements("select Id from Student") == 0)
             {
                 message.CustomBoxError("Lista vuota", "Visualizza dettagli");
                 dataOperation.Close();
